@@ -5,6 +5,7 @@
 #include "cliente.h"
 using namespace std;
 
+//Crear la clase privada y la pública parta ejecutarla en el compilador
 class Reserva {
 private:
     int idReserva;
@@ -18,4 +19,3 @@ public:
 };
 
 #endif
-
