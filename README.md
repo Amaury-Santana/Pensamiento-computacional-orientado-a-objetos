@@ -7,21 +7,21 @@ Un sistema que permita gestionar las reservas de un hotel de manera facilitando 
 
 3 TIPOS DE CLASES
 
--Cliente 
+-Cliente :     
 nombre (Nombre del cliente)
 telefono (Número de teléfono)
 edad (Edad del cliente)
 forma_pago (Método de pago)
 
 
--Reserva
+-Reserva:  
 id_reserva (ID de la reserva)
 cliente (Objeto de tipo Cliente)
 fecha_inicio (Fecha de inicio de la reserva)
 fecha_fin (Fecha de finalización de la reserva)
 
 
--Habitación
+-Habitación:  
 num_hab (Número de la habitación)
 tipo (Tipo de habitación: sencilla, doble, suite.)
 disponible(Disponibilidad de la habitación)
