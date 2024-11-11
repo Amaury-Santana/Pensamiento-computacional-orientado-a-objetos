@@ -1,4 +1,4 @@
-#include "Cliente.h"
+#include "cliente.h"
 #include <iostream>
 using namespace std;
 
@@ -12,4 +12,3 @@ void Cliente::mostrarInfoCliente() {
 
 string Cliente::getNombre() { return nombre; }
 int Cliente::getEdad() { return edad; }
-
