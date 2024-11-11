@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+//Definir que el constructor pertenece a la clase Reserva
 Reserva::Reserva(int id, Cliente c, string inicio, string fin)
     : idReserva(id), cliente(c), fechaInicio(inicio), fechaFin(fin) {}
 
