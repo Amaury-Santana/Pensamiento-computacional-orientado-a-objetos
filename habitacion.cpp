@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+//Definir que el constructor pertenece a la clase Habitación
 Habitacion::Habitacion(int num, string t, bool disp, float p)
     : numeroHabitacion(num), tipo(t), disponible(disp), precio(p) {}
 
@@ -13,4 +14,3 @@ void Habitacion::mostrarInfoHabitacion() {
 void Habitacion::cambiarDisponibilidad(bool estado) {
     disponible = estado;
 }
-
