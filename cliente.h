@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 
+//Crear la clase privada y la pública parta ejecutarla en el compilador
 class Cliente {
 private:
     string nombre;
