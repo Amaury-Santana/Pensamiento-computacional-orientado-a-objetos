@@ -3,7 +3,7 @@
 
 #include <string>
 using namespace std;
-//Definir clases privadasy luego publicas para el cpp
+
 class Cliente {
 private:
     string nombre;
@@ -19,4 +19,3 @@ public:
 };
 
 #endif
-
