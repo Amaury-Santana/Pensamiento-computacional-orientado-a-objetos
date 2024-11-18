@@ -1,26 +1,31 @@
-
-//Mando a llamar las clases
 #include <iostream>
-#include "cliente.h"
-#include "reserva.h"
-#include "habitacion.h"
+#include "cliente.cpp"
+#include "reserva.cpp"
+#include "habitacion.cpp"
 using namespace std;
 
-//En esta parte sinceramente no se si estoy del todo bien pero la idea es crear objetos de cada clase, ya luego que aprenda es pedirselo al usuario pero sería algo asi:
 int main() {
-    // Creo un objeto de la clase Cliente
+    
     Cliente cliente1("Ana García", "555-1234", 30, "Tarjeta de Crédito");
 
-    //Y asi con cada clase
+   
+    Reserva reserva1(101, cliente1, "2024-11-20", "2024-11-25");
 
-    //Luego hacer lo mismo con la parte de los detalles del cliente, la reserva y la disponibilidad de la habitación, masomenos asi:
-    // Mostrar detalles del cliente y de la reserva
+    
+    Habitacion habitacion1(201, "Doble", true, 200.0);
+
+    
     cout << "Detalles del Cliente y de la Reserva:\n";
     reserva1.mostrarDetallesReserva();
 
-    //Y asi con lo demás.
+    
+    cout << "\nDetalles de la Habitación:\n";
+    habitacion1.mostrarInfoHabitacion();
+
+    
+    habitacion1.cambiarDisponibilidad(false);
+    cout << "\nDespués de la Reserva, la Disponibilidad de la Habitación es:\n";
+    habitacion1.mostrarInfoHabitacion();
 
     return 0;
 }
-
-
