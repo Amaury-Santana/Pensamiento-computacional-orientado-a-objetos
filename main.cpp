@@ -4,6 +4,9 @@
 #include "habitacion.cpp"
 using namespace std;
 
+// linea para ejecutar el programa: g++ main.cpp -o main.out
+//  ./main.out
+
 int main() {
     
     Cliente cliente1("Ana García", "555-1234", 30, "Tarjeta de Crédito");
