@@ -1,21 +1,25 @@
 #ifndef RESERVA_H
 #define RESERVA_H
 
-#include <string>
 #include "cliente.h"
+#include "habitacion.h"
+#include <string>
 using namespace std;
 
-//Crear la clase privada y la pública parta ejecutarla en el compilador
 class Reserva {
-private:
+protected:
     int idReserva;
     Cliente cliente;
+    Habitacion habitacion;
     string fechaInicio;
     string fechaFin;
 
 public:
-    Reserva(int id, Cliente c, string inicio, string fin);
-    void mostrarDetallesReserva();
+    Reserva(int, Cliente, Habitacion, string, string);
+    virtual void mostrarDetallesReserva() const;
+    float calcularCostoTotal() const;
+    void setFechaInicio(string);
+    void setFechaFin(string);
 };
 
 #endif
