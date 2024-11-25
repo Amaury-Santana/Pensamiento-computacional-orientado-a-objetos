@@ -2,12 +2,19 @@
 #include <iostream>
 using namespace std;
 
-//Definir que el constructor pertenece a la clase Reserva
-Reserva::Reserva(int id, Cliente c, string inicio, string fin)
-    : idReserva(id), cliente(c), fechaInicio(inicio), fechaFin(fin) {}
+Reserva::Reserva(int id, Cliente c, Habitacion h, string inicio, string fin)
+    : idReserva(id), cliente(c), habitacion(h), fechaInicio(inicio), fechaFin(fin) {}
 
-void Reserva::mostrarDetallesReserva() {
+void Reserva::mostrarDetallesReserva() const {
     cout << "Reserva ID: " << idReserva << endl;
     cliente.mostrarInfoCliente();
-    cout << "Fecha de Inicio: " << fechaInicio << ", Fecha de Fin: " << fechaFin << endl;
+    habitacion.mostrarInfoHabitacion();
+    cout << "Fecha Inicio: " << fechaInicio << ", Fecha Fin: " << fechaFin << endl;
 }
+
+float Reserva::calcularCostoTotal() const {
+    return habitacion.getPrecio(); 
+}
+
+void Reserva::setFechaInicio(string inicio) { fechaInicio = inicio; }
+void Reserva::setFechaFin(string fin) { fechaFin = fin; }
