@@ -2,15 +2,16 @@
 #include <iostream>
 using namespace std;
 
-//Definir que el constructor pertenece a la clase Habitación
 Habitacion::Habitacion(int num, string t, bool disp, float p)
     : numeroHabitacion(num), tipo(t), disponible(disp), precio(p) {}
 
-void Habitacion::mostrarInfoHabitacion() {
-    cout << "Habitación No: " << numeroHabitacion << ", Tipo: " << tipo << ", Precio: $" << precio 
-         << ", Disponible: " << (disponible ? "Sí" : "No") << endl;
+void Habitacion::cambiarDisponibilidad(bool estado) { disponible = estado; }
+
+void Habitacion::mostrarInfoHabitacion() const {
+    cout << "Habitacion No: " << numeroHabitacion << ", Tipo: " << tipo
+         << ", Disponible: " << (disponible ? "Si" : "No")
+         << ", Precio: " << precio << endl;
 }
 
-void Habitacion::cambiarDisponibilidad(bool estado) {
-    disponible = estado;
-}
+float Habitacion::getPrecio() const { return precio; }
+void Habitacion::setPrecio(float p) { precio = p; }
