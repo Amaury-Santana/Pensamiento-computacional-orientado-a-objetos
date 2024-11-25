@@ -4,7 +4,6 @@
 #include <string>
 using namespace std;
 
-//Crear la clase privada y la pública parta ejecutarla en el compilador
 class Cliente {
 private:
     string nombre;
@@ -13,10 +12,15 @@ private:
     string formaDePago;
 
 public:
-    Cliente(string n, string t, int e, string fp);
-    void mostrarInfoCliente();
-    string getNombre();
-    int getEdad();
+    Cliente(string, string, int, string);
+    void mostrarInfoCliente() const;
+    string getNombre() const;
+    int getEdad() const;
+    string getFormaDePago() const;
+    void setNombre(string);
+    void setTelefono(string);
+    void setEdad(int);
+    void setFormaDePago(string);
 };
 
 #endif
