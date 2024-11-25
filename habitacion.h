@@ -4,7 +4,6 @@
 #include <string>
 using namespace std;
 
-//Crear la clase privada y la pública parta ejecutarla en el compilador
 class Habitacion {
 private:
     int numeroHabitacion;
@@ -13,9 +12,11 @@ private:
     float precio;
 
 public:
-    Habitacion(int num, string t, bool disp, float p);
-    void mostrarInfoHabitacion();
-    void cambiarDisponibilidad(bool estado);
+    Habitacion(int, string, bool, float);
+    void cambiarDisponibilidad(bool);
+    void mostrarInfoHabitacion() const;
+    float getPrecio() const;
+    void setPrecio(float);
 };
 
 #endif
