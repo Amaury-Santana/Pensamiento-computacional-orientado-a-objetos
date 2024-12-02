@@ -6,23 +6,22 @@
 #include <vector>
 using namespace std;
 
+
 //Para correr el programa hay que poner esto en la terminal: g++ main.cpp cliente.cpp habitacion.cpp reserva.cpp evento.cpp -o main.out
 
 
-
+// Muestra el menú principal
 void mostrarMenu() {
     cout << "\nMenu:" << endl;
-    cout << "1. Crear Reserva" << endl;
-    cout << "2. Crear Evento" << endl;
+    cout << "1. Crear Reserva Común" << endl;
+    cout << "2. Crear Reserva para Evento" << endl;
     cout << "3. Mostrar Reservas y Eventos" << endl;
     cout << "4. Salir" << endl;
     cout << "Seleccione una opcion: ";
 }
 
-
-
 //Al implementar todo esto ahora el usuario es el que pone todos los datos de la reserva o evento y el programa las hace, para eso creo 4 casos:
-//Caso 1. Reservas
+//Caso 1. Reserva común
 //Caso 2. Eventos
 //Caso 3. Mostrar todas las reservas y eventos
 //Caso 4. Por si alguna cosa no es válida. 
@@ -30,102 +29,114 @@ void mostrarMenu() {
 
 
 int main() {
-    vector<Reserva*> reservas;
-    vector<Evento*> eventos;
+    vector<Reserva*> reservas; // Contiene reservas y eventos
     int opcion;
 
     do {
         mostrarMenu();
         cin >> opcion;
 
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "Entrada invalida. Intente de nuevo.\n";
+            continue;
+        }
+
         switch (opcion) {
         case 1: {
-            // Datos para crear una reserva
+            // Crea una reserva común
             string nombre, telefono, formaDePago, fechaInicio, fechaFin, tipoHabitacion;
             int edad, numeroHabitacion;
             float precioHabitacion;
 
+            cin.ignore();
             cout << "Ingrese el nombre del cliente: ";
-            cin >> nombre;
+            getline(cin, nombre);
             cout << "Ingrese el telefono: ";
-            cin >> telefono;
+            getline(cin, telefono);
             cout << "Ingrese la edad: ";
             cin >> edad;
+            cin.ignore();
             cout << "Ingrese la forma de pago: ";
-            cin >> formaDePago;
+            getline(cin, formaDePago);
 
-            Cliente cliente(nombre, telefono, edad, formaDePago);
+            Cliente* cliente = new Cliente(nombre, telefono, edad, formaDePago);
 
             cout << "Ingrese el numero de habitacion: ";
             cin >> numeroHabitacion;
+            cin.ignore();
             cout << "Ingrese el tipo de habitacion: ";
-            cin >> tipoHabitacion;
+            getline(cin, tipoHabitacion);
             cout << "Ingrese el precio de la habitacion: ";
             cin >> precioHabitacion;
+            cin.ignore();
 
-            Habitacion habitacion(numeroHabitacion, tipoHabitacion, true, precioHabitacion);
+            vector<Habitacion*> habitaciones;
+            habitaciones.push_back(new Habitacion(numeroHabitacion, tipoHabitacion, true, precioHabitacion));
 
             cout << "Ingrese la fecha de inicio (YYYY-MM-DD): ";
-            cin >> fechaInicio;
+            getline(cin, fechaInicio);
             cout << "Ingrese la fecha de fin (YYYY-MM-DD): ";
-            cin >> fechaFin;
+            getline(cin, fechaFin);
 
-            reservas.push_back(new Reserva(reservas.size() + 1, cliente, habitacion, fechaInicio, fechaFin));
+            reservas.push_back(new Reserva(reservas.size() + 1, cliente, habitaciones, fechaInicio, fechaFin));
             cout << "Reserva creada con exito!\n";
             break;
         }
         case 2: {
-            // Datos para crear un evento
+            // Crea un evento
             string nombre, telefono, formaDePago, fechaInicio, fechaFin, tipoHabitacion, nombreEvento, descripcion;
             int edad, numeroHabitacion, asistentes;
             float precioHabitacion;
 
+            cin.ignore();
             cout << "Ingrese el nombre del cliente: ";
-            cin >> nombre;
+            getline(cin, nombre);
             cout << "Ingrese el telefono: ";
-            cin >> telefono;
+            getline(cin, telefono);
             cout << "Ingrese la edad: ";
             cin >> edad;
+            cin.ignore();
             cout << "Ingrese la forma de pago: ";
-            cin >> formaDePago;
+            getline(cin, formaDePago);
 
-            Cliente cliente(nombre, telefono, edad, formaDePago);
+            Cliente* cliente = new Cliente(nombre, telefono, edad, formaDePago);
 
             cout << "Ingrese el numero de habitacion: ";
             cin >> numeroHabitacion;
+            cin.ignore();
             cout << "Ingrese el tipo de habitacion: ";
-            cin >> tipoHabitacion;
+            getline(cin, tipoHabitacion);
             cout << "Ingrese el precio de la habitacion: ";
             cin >> precioHabitacion;
+            cin.ignore();
 
-            Habitacion habitacion(numeroHabitacion, tipoHabitacion, true, precioHabitacion);
+            vector<Habitacion*> habitaciones;
+            habitaciones.push_back(new Habitacion(numeroHabitacion, tipoHabitacion, true, precioHabitacion));
 
             cout << "Ingrese la fecha de inicio (YYYY-MM-DD): ";
-            cin >> fechaInicio;
+            getline(cin, fechaInicio);
             cout << "Ingrese la fecha de fin (YYYY-MM-DD): ";
-            cin >> fechaFin;
+            getline(cin, fechaFin);
 
             cout << "Ingrese el nombre del evento: ";
-            cin >> nombreEvento;
+            getline(cin, nombreEvento);
             cout << "Ingrese la descripcion del evento: ";
-            cin >> descripcion;
+            getline(cin, descripcion);
             cout << "Ingrese el numero de asistentes: ";
             cin >> asistentes;
+            cin.ignore();
 
-            eventos.push_back(new Evento(eventos.size() + 1, cliente, habitacion, fechaInicio, fechaFin, nombreEvento, descripcion, asistentes));
+            reservas.push_back(new Evento(reservas.size() + 1, cliente, habitaciones, fechaInicio, fechaFin, nombreEvento, descripcion, asistentes));
             cout << "Evento creado con exito!\n";
             break;
         }
         case 3:
-            // Mostrar todas las reservas
+            // Muestra reservas y eventos
             for (size_t i = 0; i < reservas.size(); ++i) {
+                cout << "Tipo: " << reservas[i]->getTipoReserva() << endl;
                 reservas[i]->mostrarDetallesReserva();
-                cout << "--------------------\n";
-            }
-
-            // Mostrar todos los eventos
-            for (size_t i = 0; i < eventos.size(); ++i) {
-                eventos[i]->mostrarDetallesReserva();
                 cout << "--------------------\n";
             }
             break;
@@ -137,16 +148,10 @@ int main() {
         }
     } while (opcion != 4);
 
-    //  Para liberar la  memoria
+    // Libera la memoria
     for (size_t i = 0; i < reservas.size(); ++i) {
         delete reservas[i];
-    }
-    for (size_t i = 0; i < eventos.size(); ++i) {
-        delete eventos[i];
     }
 
     return 0;
 }
-
-
-
