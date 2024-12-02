@@ -38,11 +38,11 @@ Extiende Reserva para incluir eventos, agregando atributos como nombre del event
 
 # Cómo Compilar y Ejecutar
 
-Usar el siguiente comando para compilar el proyecto:
+- Usar el siguiente comando para compilar el proyecto:
 
 g++ main.cpp cliente.cpp habitacion.cpp reserva.cpp evento.cpp -o main.out
 
 
-Para ejecutar el programa:
+- Para ejecutar el programa:
 
 ./main.out
