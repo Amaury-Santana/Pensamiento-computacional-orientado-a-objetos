@@ -1,5 +1,5 @@
 # Pensamiento-computacional-orientado-a-objetos
-Amaury Manuel Santana Barrios A01708442
+
 
 # Gestión de Reservas de Hotel
 Autor: Amaury Manuel Santana Barrios
