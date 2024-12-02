@@ -19,3 +19,7 @@ Avance 3
 
 Sigo estándares en todo mi código fuente: estilo, sangrías, comentarios, nombres, etc...
 Avance 3
+
+
+Correción: 
+Si evento hereda de reserva porque instancias un contenedor de eventos si puede ir dentro del de reservas al ser un hijo de? Tu herencia solo modificas el cout, por lo que no tiene proposito, porque no meter esto dentro de reserva. Revisa tu estandar de codificación. Aunque en tu UML representas la relacional entre cliente y reserva como agregacion, en tu codigo es composición ya que al no usar apuntadores como lo seria Cliente* cliente, al destruir tu reserva se destruye tu cliente también. En tu codigo la multiplicidad entre reserva y habitacion de 0..* no se cumple ya que solo se asocia a una habitacion especifica.
