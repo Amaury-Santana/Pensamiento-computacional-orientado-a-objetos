@@ -2,7 +2,7 @@
 
 
 # Gestión de Reservas de Hotel
-Autor: Amaury Manuel Santana Barrios
+Amaury Manuel Santana Barrios
 Matrícula: A01708442
 
 # Descripción
