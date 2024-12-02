@@ -5,18 +5,17 @@
 #include <string>
 using namespace std;
 
+// Clase que representa un evento
 class Evento : public Reserva {
 private:
-    string nombreEvento;
-    string descripcion;
-    int asistentes;
+    string nombreEvento; 
+    string descripcion;  
+    int asistentes;      
 
 public:
-    Evento(int, Cliente, Habitacion, string, string, string, string, int);
-    void mostrarDetallesReserva() const;
-    void setNombreEvento(string);
-    void setDescripcion(string);
+    Evento(int, Cliente*, vector<Habitacion*>, string, string, string, string, int); // Constructor
+    void mostrarDetallesReserva() const; 
+    string getTipoReserva() const;       
 };
 
 #endif
-
