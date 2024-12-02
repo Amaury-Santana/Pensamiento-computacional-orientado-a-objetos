@@ -36,3 +36,13 @@ Extiende Reserva para incluir eventos, agregando atributos como nombre del event
                                                                               
 - Diferenciación clara: Clasifica reservas comunes y eventos al mostrar información.
 
+# Cómo Compilar y Ejecutar
+Compilación:
+Usar el siguiente comando para compilar el proyecto:
+
+g++ main.cpp cliente.cpp habitacion.cpp reserva.cpp evento.cpp -o main.out
+
+
+Para ejecutar el programa:
+
+./main.out
