@@ -1,3 +1,8 @@
+
+# Project Title
+
+A brief description of what this project does and who it's for
+
 # Pensamiento-computacional-orientado-a-objetos
 
 
@@ -11,21 +16,21 @@ Pensando en ideas para mi proyecto, recordé que mi mamá trabaja en una agencia
 Este sistema permite gestionar reservas de un hotel de manera eficiente. Los usuarios pueden registrar clientes, crear reservas (comunes o para eventos), y consultar habitaciones disponibles. Está diseñado para optimizar las funciones de recepción y administración de un hotel, haciendo más sencilla la tarea para usuarios como recepcionistas o administradores.
 
 # Clases Principales
-Cliente:
+- Cliente:
 Representa a los clientes, almacenando su nombre, teléfono, edad y forma de pago.
 
-Habitación:
+- Habitación:
 Modela las habitaciones del hotel con atributos como número, tipo (sencilla, doble, suite), disponibilidad y precio.
 
-Reserva:
+- Reserva:
 Clase base para manejar reservas generales, asociadas a un cliente y a una o varias habitaciones.
 
-Evento:
+- Evento:
 Extiende Reserva para incluir eventos, agregando atributos como nombre del evento, descripción y número de asistentes.
 
 # Características
-Automatización: Facilita el registro de clientes y la creación de reservas.                                                                      
-Gestión eficiente: Usa punteros para manejar relaciones entre objetos, liberando memoria correctamente.                                       
-Menú interactivo: Permite al usuario crear reservas comunes o eventos, y consultar información registrada.                                      
-Diferenciación clara: Clasifica reservas comunes y eventos al mostrar información.
+- Automatización: Facilita el registro de clientes y la creación de reservas.                                                                                                                                       
+- Gestión eficiente: Usa punteros para manejar relaciones entre objetos, liberando memoria correctamente.                                                                                        
+- Menú interactivo: Permite al usuario crear reservas comunes o eventos, y consultar información registrada.                                                                                    
+- Diferenciación clara: Clasifica reservas comunes y eventos al mostrar información.
 
