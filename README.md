@@ -29,8 +29,14 @@ Clase base para manejar reservas generales, asociadas a un cliente y a una o var
 Extiende Reserva para incluir eventos, agregando atributos como nombre del evento, descripción y número de asistentes.
 
 # Características
-- Automatización: Facilita el registro de clientes y la creación de reservas.                                                                                                                                       
-- Gestión eficiente: Usa punteros para manejar relaciones entre objetos, liberando memoria correctamente.                                                                                        
-- Menú interactivo: Permite al usuario crear reservas comunes o eventos, y consultar información registrada.                                                                                    
+- Automatización: Facilita el registro de clientes y la creación de reservas.
+
+                                                                                                                                
+- Gestión eficiente: Usa punteros para manejar relaciones entre objetos, liberando memoria correctamente.
+
+                                                                                      
+- Menú interactivo: Permite al usuario crear reservas comunes o eventos, y consultar información registrada.
+
+                                                                              
 - Diferenciación clara: Clasifica reservas comunes y eventos al mostrar información.
 
