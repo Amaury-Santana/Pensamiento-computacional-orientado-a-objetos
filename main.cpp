@@ -8,7 +8,7 @@ using namespace std;
 
 
 //Para correr el programa hay que poner esto en la terminal: g++ main.cpp cliente.cpp habitacion.cpp reserva.cpp evento.cpp -o main.out
-
+//Luego ./main.out
 
 // Muestra el menú principal
 void mostrarMenu() {
